@@ -22,6 +22,11 @@ function CalculartipoTriangulo (ladoTriangulo1,ladoTriangulo2,baseTriangulo) {
             //Triangulo Equilatero: Todos sus lados son iguales
             return tipoTriangulo="Equilatero";
         break;
+
+        case (ladoTriangulo1!=ladoTriangulo2 && ladoTriangulo1!=baseTriangulo && ladoTriangulo2!=baseTriangulo):
+            //Triangulo Escaleno: Ninguno de sus lados son iguales
+            return tipoTriangulo="Escaleno";
+        break;
     }
 } 
 
@@ -45,6 +50,11 @@ function areaTriangulo (ladoTriangulo1, ladoTriangulo2,baseTriangulo){
     
     case 'Equilatero':
         return (Math.sqrt(3)/4)*(Number(ladoTriangulo1)**2);
+    break;
+
+    case 'Escaleno':
+        const Semiperimetro = (Number(ladoTriangulo1)+Number(ladoTriangulo2)+Number(baseTriangulo))/2;
+        return Math.sqrt(Semiperimetro*(Semiperimetro-ladoTriangulo1)*(Semiperimetro-ladoTriangulo2)*(Semiperimetro-baseTriangulo));
     break;
     }
 }
@@ -70,7 +80,7 @@ function CalcularPerimetroCuadrado(){
     const value = input.value;
 
     const perimetro = perimetroCuadrado(value);
-    alert ("El perímetro del Cuadrado es: "+perimetro+" cm2");
+    alert ("El perímetro del Cuadrado es: "+perimetro+" cm");
 }
 
 function CalcularAreaCuadrado(){
