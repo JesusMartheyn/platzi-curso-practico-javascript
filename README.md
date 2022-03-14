@@ -5,7 +5,5 @@
 
 ## Taller #1: figuras geométricas
 
-- Primer paso: definir las fórmulas
-- Segundo paso: implementar las fórmulas en javascript 
-- Tercer paso: crear funciones
-- Cuarto paso: integrar javascript con html
+- Permite el cáculo de áreas y perímetros de cuadrados, circulos y triangulos (equilateros&Isoceles)
+- La primera versión cuenta con un html básico que está falto de estilizado CSS
