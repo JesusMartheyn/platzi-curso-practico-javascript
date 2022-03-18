@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precios y descuentos | curso práctico de Javascript</title>
+</head>
+<body>
+    <header>
+        <h1> Precios y descuentos</h1>
+        <p>Este es el segundo taller del curso práctico de Javascript</p>
+    </header>
+    <section>
+        <h2>Calcula el precio a pagar de tus productos con descuento</h2>
+        <form action="calculo-precios-y-descuentos">
+            <label for="precio-inicial-producto">Precio Original</label>
+            <input type="number" id="precio-inicial-producto">
+            <label for="codigo-cupon">Cupón</label>
+            <input type="Text" id="codigo-cupon">
+            <button type="button" onclick="CalcularPrecioConDescuento()">Calcular precio final</button>
+
+            <p id="precio-con-descuento"></p>
+
+        </form>
+    </section>
+
+    <script src="precios-y-descuentos.js"></script>
+</body>
+</html>
