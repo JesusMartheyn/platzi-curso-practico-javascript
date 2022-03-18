@@ -1,42 +1,31 @@
 //P*(100-D)/100     ecuación para calcular descuesto
 
 const coupons = [
-    "Regular",
-    "Bomba",
-    "Cachon",
+    {name:"Regular", discount:10,},
+    {name:"Bomba", discount:20,},
+    {name:"Cachon", discount:30,}
 ];
 
 function calculoDescuentoCupon(Cupondescuento){
-    var porcentajeDescuento=0;
 
-    if(!coupons.includes(Cupondescuento)){
+    const isCouponValueValid = function (coupons){
+        return coupons.name === Cupondescuento;
+    };
+
+    const userCoupon = coupons.find(isCouponValueValid);
+
+    if(!userCoupon){
         alert("El cupón "+Cupondescuento+" no es valido")
+    }else{
+        const porcentajeDescuento=userCoupon.discount;
+        return porcentajeDescuento;
     }
-
-    switch (Cupondescuento){
-        case coupons[0]: porcentajeDescuento =10;
-        break;
-
-        case coupons[1]: porcentajeDescuento=20;
-        break;
-
-        case coupons[2]: porcentajeDescuento=30;
-        break;
-    }
-    console.log(porcentajeDescuento);
-    return porcentajeDescuento;
+    
 }
 
 function PrecioConDescuento (precioOriginal,descuento){
-
-    if(!precioOriginal){
-        alert("El campo de precio original debe ser diligenciado")
-    } 
-    else {
-        const porcentajePrecioConDescuento= (precioOriginal*(100-descuento))/100;
-        return porcentajePrecioConDescuento;
-    }
-    
+    const porcentajePrecioConDescuento= (precioOriginal*(100-descuento))/100;
+    return porcentajePrecioConDescuento;
 }
 
 
